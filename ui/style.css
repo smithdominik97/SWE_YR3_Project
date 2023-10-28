@@ -1,0 +1,103 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* border: solid red 0.1rem; */
+}
+
+body,
+nav,
+ul,
+nav,
+html, button {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+
+li {
+  list-style-type: none;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(65, 58, 58);
+}
+
+
+nav {
+  margin: 0;
+  height: 5rem;
+  border-bottom: solid aliceblue 0.2rem;
+  border-width: 80%;
+  background-color: rgb(31, 36, 36);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+.asset-item {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-around;
+  border-top:solid rgb(158, 191, 219) 0.1rem;
+  border-bottom: solid rgb(158, 191, 219) 0.1rem;
+}
+
+.asset-buttons {
+  display: flex;
+  gap: 1rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-item {
+  width: 8rem;
+  height: 3rem;
+}
+
+button {
+  font-weight: bold;
+  color: white;
+}
+
+.add-btn {
+  width: 8rem;
+  align-self: flex-end;
+  margin-inline: 2rem;
+  background-color: green;
+  height: 3rem;
+
+}
+
+.assets-display {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  padding-inline: 1rem;
+}
+
+.asset-info {
+  width: 30rem;
+}
+
+
+.delete-btn {
+  background-color: red;
+}
+
+.edit-btn {
+  background-color: blue;
+}
