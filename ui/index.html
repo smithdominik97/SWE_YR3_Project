@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,15 +22,17 @@
     </header>
 
     <main>
-
       <div class="assets-display">
-
         <button class="add-btn"><span>Add</span></button>
 
         <div class="asset-item">
           <div class="asset-buttons">
-            <button type="button" class="btn-item delete-btn" ><span>Delete</span></button>
-            <button type="button" class="btn-item edit-btn"><span>Edit</span></button>
+            <button type="button" class="btn-item delete-btn">
+              <span>Delete</span>
+            </button>
+            <button type="button" class="btn-item edit-btn">
+              <span>Edit</span>
+            </button>
           </div>
 
           <div class="asset-info">
@@ -41,14 +43,16 @@
               <li>Type: <span></span></li>
             </ul>
           </div>
-
-
         </div>
 
-          <div class="asset-item">
+        <div class="asset-item">
           <div class="asset-buttons">
-            <button type="button" class="btn-item delete-btn" ><span>Delete</span></button>
-            <button type="button" class="btn-item edit-btn"><span>Edit</span></button>
+            <button type="button" class="btn-item delete-btn">
+              <span>Delete</span>
+            </button>
+            <button type="button" class="btn-item edit-btn">
+              <span>Edit</span>
+            </button>
           </div>
 
           <div class="asset-info">
@@ -59,14 +63,16 @@
               <li>Type: <span></span></li>
             </ul>
           </div>
-
-
         </div>
 
-          <div class="asset-item">
+        <div class="asset-item">
           <div class="asset-buttons">
-            <button type="button" class="btn-item delete-btn" ><span>Delete</span></button>
-            <button type="button" class="btn-item edit-btn"><span>Edit</span></button>
+            <button type="button" class="btn-item delete-btn">
+              <span>Delete</span>
+            </button>
+            <button type="button" class="btn-item edit-btn">
+              <span>Edit</span>
+            </button>
           </div>
 
           <div class="asset-info">
@@ -77,11 +83,27 @@
               <li>Type: <span></span></li>
             </ul>
           </div>
-
-
         </div>
-
       </div>
     </main>
+    <script>
+                  const { invoke } = window.__TAURI__.tauri
+
+                  import { Database } from "tauri-plugin-sql-api";
+            import { info } from "tauri-plugin-log-api";
+            import { attachConsole } from "tauri-plugin-log-api";
+
+            attachConsole(); // <-- this line here
+
+            // mysql
+            const db = await Database.load(
+              "mysql://sql2207064:factor locks devon cars@lochnagar.abertay.ac.uk/sql2207064"
+            );
+
+            const result = await db.execute(
+        "INSERT into employee (eno, ename, edepartment, ejob, ephone, eroom, eemail ) VALUES ('test', 'test', 'test', 'test', 'test', 'test', 'test')",
+        [employee.eno, employee.ename, employee.edeparment, employee.ejob, employee.ephone, employee.eroom, employee.eemail],
+      );
+    </script>
   </body>
 </html>
