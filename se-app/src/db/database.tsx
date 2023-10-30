@@ -14,7 +14,13 @@ export async function getDatabase() {
   }
   console.log("Connected to database");
 
+  const select = await db.select(
+    "SELECT * FROM employee"
+  ) as { eno: number, ename: string, edepartment: string, ejob: string, ephone: string, eroom: string, eemail: string }[];
 
+  for (const row of select) {
+    console.log(row);
+  }
 
   return "Connected";
 }
