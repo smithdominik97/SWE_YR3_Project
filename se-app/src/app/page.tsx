@@ -1,6 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import returnDatabase from "../db/database";
 
 export default function Home() {
-  return <></>;
+  returnDatabase();
+
+  return (
+    <>
+      <h1>Hello</h1>
+    </>
+  );
 }
