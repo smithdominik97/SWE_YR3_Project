@@ -3,7 +3,9 @@ import Database from "tauri-plugin-sql-api";
 
 
 
-export default async function getDatabase() {
+export default async function GetDatabase() {
+  
+
   const db = await Database.load(
     "mysql://sql2207064:factor%20locks%20devon%20cars@lochnagar.abertay.ac.uk/sql2207064"
   );
