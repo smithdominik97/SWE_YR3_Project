@@ -1,8 +1,6 @@
 
 'use client'
 import { useEffect } from 'react';
-import getDatabase from "../db/connection";
-import { InsertAsset } from '@/db/api';
 import { GetAsset } from '@/db/api';
 import { invoke } from '@tauri-apps/api';
 import  AssetItem  from '@/app/asset';
