@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
-  /* border: solid red 0.1rem; */
+  font-family: 'Roboto', sans-serif;
 }
 
 body,
@@ -12,7 +14,7 @@ nav,
 html, button {
   margin: 0;
   padding: 0;
-  color: white;
+  color: black;
 }
 
 
@@ -24,8 +26,12 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  gap: 2rem;
-  background-color: rgb(65, 58, 58);
+  gap: 1rem;
+  background-color: rgb(255, 255, 255);
 }
 
+button {
+  font-weight: bold;
+  color: black;
+}
 

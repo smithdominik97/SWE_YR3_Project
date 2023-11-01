@@ -33,15 +33,15 @@ export default function AssetItem() {
         <div key={index} className={styles.assetitem}>
           <div className={styles.assetbuttons}>
             <button type="button" className={`${styles.btnitem} ${styles.deletebtn}`}>
-              <span>Delete</span>
+              <span className={styles.btnText}>Delete</span>
             </button>
             <button type="button" className={`${styles.btnitem} ${styles.editbtn}`}>
-              <span>Edit</span>
+              <span className={styles.btnText}>Edit</span>
             </button>
           </div>
 
-          <div className={styles.assetinfo}>
-            <h1>System Name <span>{asset.systemname}</span></h1>
+          <div className={styles.assetsdisplay}>
+            <h1><span>{asset.systemname}</span></h1>
             <ul>
               <li>Model: <span>{asset.model}</span></li>
               <li>Manufacturer: <span>{asset.manufacturer}</span></li>
