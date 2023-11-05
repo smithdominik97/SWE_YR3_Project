@@ -2,8 +2,7 @@ import styles from './page.module.css';
 import { useState, useEffect } from 'react';
 import { GetAsset } from '@/db/api';
 
-type Asset = {
-    uid: number;
+export type Asset = {
     systemname: string;
     model: string;
     manufacturer: string;
