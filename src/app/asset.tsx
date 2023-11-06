@@ -10,7 +10,7 @@ export type Asset = {
     ip: string;
     purchasedate: string;
     note: string;
-    employees_name: string;
+    employees_id: string;
   };
 
   interface AssetItemProps {
@@ -53,7 +53,7 @@ export type Asset = {
               <li>IP Address: <span>{asset.ip}</span></li>
               <li>Purchase Date: <span>{asset.purchasedate}</span></li>
               <li>Note: <span>{asset.note}</span></li>
-              <li>Note: <span>{asset.employees_name}</span></li>
+              <li>Employee ID: <span>{asset.employees_id}</span></li>
             </ul>
           </div>
         </div>
