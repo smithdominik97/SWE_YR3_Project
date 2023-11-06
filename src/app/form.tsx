@@ -2,7 +2,11 @@ import { InsertAsset } from "@/db/api"
 import { Asset } from "@/app/asset"
 import styles from "./form.module.css"
 
-export default function AssetForm() {
+interface AssetFormProps {
+    onSubmit: () => void;
+  }
+
+export default function AssetForm({ onSubmit }: AssetFormProps)  {
 
     const assetsubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -17,7 +21,8 @@ export default function AssetForm() {
             purchasedate: formData.get('purchasedate') as string,
             note: formData.get('note') as string,
         };
-        InsertAsset(asset);
+        await InsertAsset(asset);
+        onSubmit();
     }
 
     return (

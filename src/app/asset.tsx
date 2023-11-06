@@ -12,17 +12,21 @@ export type Asset = {
     note: string;
   };
 
-export default function AssetItem() {
+  interface AssetItemProps {
+    reload: () => void;
+  }
+
+  export default function AssetItem({ reload }: AssetItemProps) {
     const [assets, setAssets] = useState<Asset[]>([]);
 
-     useEffect(() => {
+    useEffect(() => {
       const fetchAssets = async () => {
         const assets = await GetAsset();
         setAssets(assets);
       };
   
       fetchAssets();
-    }, []);
+    }, [reload]);
 
     // const assets = await GetAsset();
 

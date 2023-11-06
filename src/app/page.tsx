@@ -1,19 +1,29 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GetAsset } from "@/db/api";
 import { invoke } from "@tauri-apps/api";
 import AssetItem from "@/app/asset";
 import styles from "./page.module.css";
 import AssetForm from "./form";
+import { Asset } from "@/app/asset";
 
 export default function Home() {
+
+  const [reload, setReload] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       invoke("window", { cmd: "setTitle", title: "Home" });
     }
   }, []);
 
-  const assets = GetAsset();
+  const triggerReload = () => {
+    setReload(!reload);
+  };
+
+
+ 
+  // const assets = GetAsset();
   // insertAsset();
 
   return (
@@ -43,8 +53,8 @@ export default function Home() {
 
           </div>
        
-          <AssetItem />
-          <AssetForm />
+          <AssetItem reload={triggerReload} />
+          <AssetForm onSubmit={() => setReload(!reload)} />
         </div>
       </main>
     </>
