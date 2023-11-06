@@ -7,4 +7,7 @@ To run development server:
 npm run tauri dev
 
 ```
+## Getting Started
 
+Plugins used: 
+https://github.com/tauri-apps/plugins-workspace/tree/v1/plugins/sql
