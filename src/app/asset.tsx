@@ -15,7 +15,7 @@ export type Asset = {
 export default function AssetItem() {
     const [assets, setAssets] = useState<Asset[]>([]);
 
-    useEffect(() => {
+     useEffect(() => {
       const fetchAssets = async () => {
         const assets = await GetAsset();
         setAssets(assets);
@@ -45,6 +45,10 @@ export default function AssetItem() {
               <li>Model: <span>{asset.model}</span></li>
               <li>Manufacturer: <span>{asset.manufacturer}</span></li>
               <li>Type: <span>{asset.type}</span></li>
+              <li>IP Address: <span>{asset.ip}</span></li>
+              <li>Purchase Date: <span>{asset.purchasedate}</span></li>
+              <li>Note: <span>{asset.note}</span></li>
+
             </ul>
           </div>
         </div>
