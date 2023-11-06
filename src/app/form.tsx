@@ -20,6 +20,7 @@ export default function AssetForm({ onSubmit }: AssetFormProps)  {
             ip: formData.get('ip') as string,
             purchasedate: formData.get('purchasedate') as string,
             note: formData.get('note') as string,
+            employees_name: formData.get('employees_name') as string
         };
         await InsertAsset(asset);
         onSubmit();
@@ -41,6 +42,8 @@ export default function AssetForm({ onSubmit }: AssetFormProps)  {
             <input type="text" name="purchasedate"/>
             <label htmlFor="note">Note: </label>
             <textarea name="note" id="" cols={30} rows={10}></textarea>
+            <label htmlFor="employees_name">Employee: </label>
+            <input type="text" name="employees_name"/>
             <button type="submit">Add</button>
         </form>
     )
