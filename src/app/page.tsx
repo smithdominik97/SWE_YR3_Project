@@ -44,18 +44,19 @@ export default function Home() {
         </nav>
       </header>
 
-      <main>
+      <main className={styles.main}>
         <div className={styles.assets}>
-          <div className={styles.addbtnContainer}>
+          {/* <div className={styles.addbtnContainer}>
             <button className={styles.addbtn}>
               <span className={styles.btnText}>Add</span>
             </button>
 
-          </div>
+          </div> */}
        
           <AssetItem reload={triggerReload} />
-          <AssetForm onSubmit={() => setReload(!reload)} />
+          
         </div>
+        <AssetForm onSubmit={() => setReload(!reload)} />
       </main>
     </>
   );

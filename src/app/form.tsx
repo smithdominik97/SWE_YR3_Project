@@ -41,7 +41,7 @@ export default function AssetForm({ onSubmit }: AssetFormProps)  {
             <input type="text" name="purchasedate"/>
             <label htmlFor="note">Note: </label>
             <textarea name="note" id="" cols={30} rows={10}></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit">Add</button>
         </form>
     )
 }
