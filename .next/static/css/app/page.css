@@ -1,0 +1,132 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/app/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/* 
+
+body,
+nav,
+ul,
+nav,
+html, button {
+  margin: 0;
+  padding: 0;
+  color: white;
+} */
+
+
+.page_li__InLEe {
+  list-style-type: none;
+}
+
+.page_body__pK_rb {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(65, 58, 58);
+}
+
+
+.page_nav__zpG_3 {
+  margin: 0;
+  height: 5rem;
+}
+
+.page_navitem__Gk_t_ {
+  background-color: rgba(66, 76, 85, 0.726);
+  padding-inline: 0.7rem;
+  border-bottom-left-radius: 5px;
+  color: white;
+}
+
+.page_navbar__chktt {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page_assetitem__b87FQ {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  justify-content: space-around;
+  border:solid rgb(158, 191, 219) 0.1rem;
+  border-radius: 5px;
+  width: 50em;
+  flex-wrap: wrap;
+
+  /* border-bottom: solid rgb(158, 191, 219) 0.1rem; */
+}
+
+.page_assets__FxfvK {
+  display: flex;
+  flex-direction: column ;
+  gap: 1rem;
+  padding-inline: 2rem; 
+  align-items: space-around;
+}
+
+.page_assetbuttons__jQqTT {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  height: 5rem;
+  align-self: center;
+}
+
+.page_btnitem__6BnQU {
+  width: 8rem;
+  height: 3rem;
+}
+
+
+.page_addbtn__sZi3Q {
+  width: 8rem;
+  align-self: flex-end;
+  margin-inline: 2rem;
+  background-color: rgb(96, 216, 96);
+  height: 3rem;
+}
+
+.page_addbtnContainer__ODw_3 {
+  display: flex;
+  padding-block: 0.5rem;
+}
+
+.page_assetsdisplay__k_0Kc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: center;
+}
+
+.page_assetinfo__3IgWa {
+  width: 30rem;
+}
+
+
+.page_deletebtn__zmxtg {
+  background-color: rgb(235, 93, 93);
+}
+
+.page_editbtn__vzRba {
+  background-color: rgb(107, 107, 221);
+}
+
+.page_main__GlU4n {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[12].oneOf[7].use[3]!./src/app/form.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.form_form__GctU4 {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width:500px;
+    align-self: flex-start;
+    padding-top: 10em;
+}

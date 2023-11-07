@@ -3,10 +3,10 @@ import Database from "tauri-plugin-sql-api";
 
 
 
-export async function getDatabase() {
-  const db = await Database.load(
-    "mysql://sql2207064:factor%20locks%20devon%20cars@lochnagar.abertay.ac.uk/sql2207064"
-  );
+const db = await Database.load(
+  //enter mysql database credentials here ("mysql://username:password@servername/database")
+  ""
+);
 
   if (!db.execute) {
     console.log("Failed to connect to database");
