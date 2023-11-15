@@ -31,3 +31,13 @@ export async function GetAsset() {
 
 }
 
+export async function DeleteAsset() {
+  const db = await GetDatabase();
+    const remove = await db.execute(
+  "DELETE FROM assets WHERE  "
+) ;
+
+console.log(remove);
+
+}
+
