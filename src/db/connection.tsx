@@ -13,7 +13,7 @@ export default async function GetDatabase() {
 
   if (!db.execute) {
     console.log("Failed to connect to database");
-    throw new Error("Falled to connect to database");
+    throw new Error("Failed to connect to database");
   }
   console.log("Connected to database");
 

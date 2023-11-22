@@ -49,6 +49,7 @@ html, button {
   border:solid rgb(158, 191, 219) 0.1rem;
   border-radius: 5px;
   width: 50em;
+  flex-wrap: wrap;
 
   /* border-bottom: solid rgb(158, 191, 219) 0.1rem; */
 }
@@ -84,8 +85,6 @@ html, button {
 
 .addbtnContainer {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
   padding-block: 0.5rem;
 }
 
@@ -107,5 +106,11 @@ html, button {
 
 .editbtn {
   background-color: rgb(107, 107, 221);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 

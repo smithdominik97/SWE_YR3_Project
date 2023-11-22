@@ -1,11 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { GetAsset } from "@/db/api";
 import { invoke } from "@tauri-apps/api";
 import AssetItem from "@/app/asset";
 import styles from "./page.module.css";
 import AssetForm from "./form";
-import { Asset } from "@/app/asset";
+
 
 export default function Home() {
 
@@ -44,18 +43,19 @@ export default function Home() {
         </nav>
       </header>
 
-      <main>
+      <main className={styles.main}>
         <div className={styles.assets}>
-          <div className={styles.addbtnContainer}>
+          {/* <div className={styles.addbtnContainer}>
             <button className={styles.addbtn}>
               <span className={styles.btnText}>Add</span>
             </button>
 
-          </div>
+          </div> */}
        
           <AssetItem reload={triggerReload} />
-          <AssetForm onSubmit={() => setReload(!reload)} />
+          
         </div>
+        <AssetForm onSubmit={() => setReload(!reload)} />
       </main>
     </>
   );
