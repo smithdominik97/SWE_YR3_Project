@@ -8,7 +8,7 @@ export default async function GetDatabase() {
 
   const db = await Database.load(
     //enter mysql database credentials here ("mysql://username:password@servername/database")
-    ""
+    "mysql://sql2207064:factor%20locks%20devon%20cars@lochnagar.abertay.ac.uk/sql2207064"
   );
 
   if (!db.execute) {
