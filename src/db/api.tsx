@@ -38,7 +38,16 @@ export async function DeleteAsset() {
   "DELETE FROM assets WHERE  "
 ) ;
 
+
 console.log(remove);
 
 }
 
+export async function GetUser() {
+  const db = await GetDatabase();
+    const select = await db.select(
+  "SELECT * FROM employees"
+    )
+
+    return select;
+}

@@ -1,62 +1,23 @@
 "use client";
-import { useEffect, useState } from "react";
-import { invoke } from "@tauri-apps/api";
-import AssetItem from "@/app/asset";
 import styles from "./page.module.css";
-import AssetForm from "./form";
 
+function HandleLogin() {
+    
+}
 
-export default function Home() {
-
-  const [reload, setReload] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      invoke("window", { cmd: "setTitle", title: "Home" });
-    }
-  }, []);
-
-  const triggerReload = () => {
-    setReload(!reload);
-  };
-
+export default function Login() {
 
  
-  // const assets = GetAsset();
-  // insertAsset();
-
   return (
-    <>
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <ul className={styles.navbar}>
-            <li>
-              <p></p>
-            </li>
-
-            <li className={styles.navitem}>
-              <p>
-                User: <span>Dominik</span>
-              </p>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <main className={styles.main}>
-        <div className={styles.assets}>
-          {/* <div className={styles.addbtnContainer}>
-            <button className={styles.addbtn}>
-              <span className={styles.btnText}>Add</span>
-            </button>
-
-          </div> */}
-       
-          <AssetItem reload={triggerReload} />
-          
-        </div>
-        <AssetForm onSubmit={() => setReload(!reload)} />
-      </main>
-    </>
+    <div>
+    <h1>Login</h1>
+    <form action="">
+        <label htmlFor="username">Username: </label>
+        <input type="text" name="username" id="username"/>
+        <label htmlFor="password">Password: </label>
+        <input type="password" name="password" id="password"/>
+        <button type="submit">Login</button>
+    </form>
+</div>
   );
 }
