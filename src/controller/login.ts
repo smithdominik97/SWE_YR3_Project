@@ -1,29 +1,30 @@
-// import * as bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { GetUser } from '@/api/api';
-import { Employee, Login } from '@/types/types';
+import { Login } from '@/types/types';
 
 
 
+async function comparePassword (password: string, hashedPassword: string) {
+    const success = await bcrypt.compare(password, hashedPassword)
+    if (success) {
+        console.log("password match");
+        return true;
+    }
+    console.log("wrong password")
+    return false;
+}
 
 export async function HandleLogin (login: Login) {
     // compare login data with database using bcrypt compare
     const  password  = login.password
     const user = login.username
-    console.log("input password: ", password);
 
 
     const users: any = await GetUser(user);
-    console.log(users[0].password);
-
-    console.log("login.ts: ", users)  ;
 
 
-        // console.log(user.password)   
-        // const match = bcrypt.compareSync(password, user.password);
-
-        
-        // console.log(match);
-        if (users[0].password === password) {
+    const passwordMatch = await comparePassword(password, users[0].password);
+        if (passwordMatch) {
             console.log("login success");
             return true;
             
