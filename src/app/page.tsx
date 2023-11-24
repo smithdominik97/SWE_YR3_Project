@@ -2,9 +2,12 @@
 import styles from "./page.module.css";
 import { HandleLogin } from "@/controller/login"
 import { Login } from "@/types/types"
+import { useRouter} from "next/navigation"
+
 
 
 export default function Login() {
+  const router = useRouter();
 
   const loginSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -15,7 +18,10 @@ export default function Login() {
         password: formData.get('password') as string,
     };
     
-    await HandleLogin(login);
+   const success = await HandleLogin(login);
+   if (success) {
+    router.push('/asset');
+  }
   }
 
   return (

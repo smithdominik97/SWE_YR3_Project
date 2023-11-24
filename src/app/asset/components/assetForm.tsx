@@ -1,5 +1,5 @@
 import { InsertAsset } from "@/api/api"
-import { Asset } from "@/app/asset"
+import { Asset } from "@/app/asset/components/assetItem"
 import styles from "./form.module.css"
 
 interface AssetFormProps {
