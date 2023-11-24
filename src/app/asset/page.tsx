@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api";
-import AssetItem from "@/app/asset";
+import AssetItem from "@/app/asset/components/assetItem";
 import styles from "./page.module.css";
-import AssetForm from "../form";
+import AssetForm from "./components/assetForm";
 
 
 export default function Home() {

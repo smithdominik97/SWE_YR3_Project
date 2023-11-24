@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from '../page.module.css';
 import { useState, useEffect } from 'react';
 import { GetAsset } from '@/api/api';
 
