@@ -1,25 +1,7 @@
 import GetDatabase from "./connection";
+import { Asset } from "../types/types"
 
 
-
-interface Asset {
-  systemname: string;
-  model: string;
-  manufacturer: string;
-  type: string;
-  ip: string;
-  purchasedate: string;
-  note: string;
-  employees_id: string;
-}
-
-export type Employee = {
-    id: number;
-    firstname: string;
-    password: string;
-    email: string;
-    department_id: number;
-}
 
 export async function InsertAsset(asset: Asset) {
   const db = await GetDatabase();
