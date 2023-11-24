@@ -13,6 +13,14 @@ interface Asset {
   employees_id: string;
 }
 
+export type Employee = {
+    id: number;
+    firstname: string;
+    password: string;
+    email: string;
+    department_id: number;
+}
+
 export async function InsertAsset(asset: Asset) {
   const db = await GetDatabase();
   const insert = await db.execute(
@@ -43,11 +51,13 @@ console.log(remove);
 
 }
 
-export async function GetUser() {
+export async function GetUser(user: string) {
   const db = await GetDatabase();
     const select = await db.select(
-  "SELECT * FROM employees"
-    )
+  "SELECT * FROM employees WHERE email = '" + user + "'"
+    );
 
+    console.log(select);
     return select;
+    
 }

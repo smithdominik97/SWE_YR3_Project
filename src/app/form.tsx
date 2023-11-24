@@ -1,4 +1,4 @@
-import { InsertAsset } from "@/db/api"
+import { InsertAsset } from "@/api/api"
 import { Asset } from "@/app/asset"
 import styles from "./form.module.css"
 
