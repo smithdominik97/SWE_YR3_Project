@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 import { useState, useEffect } from 'react';
-import { GetAsset } from '@/db/api';
+import { GetAsset } from '@/api/api';
 
 export type Asset = {
     systemname: string;
