@@ -12,6 +12,7 @@ export type Asset = {
   export type Employee = {
       id: number;
       firstname: string;
+      lastname: string;
       password: string;
       email: string;
       department_id: number;

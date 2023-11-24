@@ -1,5 +1,5 @@
 import GetDatabase from "./connection";
-import { Asset } from "../types/types"
+import { Asset, Employee } from "../types/types"
 
 
 
@@ -36,10 +36,9 @@ console.log(remove);
 export async function GetUser(user: string) {
   const db = await GetDatabase();
     const select = await db.select(
-  "SELECT * FROM employees WHERE email = '" + user + "'"
-    );
-
-    console.log(select);
+  "SELECT * FROM employees WHERE email = ?" , [user]
+    ) as {id: number, firstname: string, lastname: string, email: string, password: string, deparment_id: number }[];
+    console.log("api.tsx: "+ select);
     return select;
     
 }
