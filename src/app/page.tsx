@@ -21,8 +21,10 @@ export default function Login() {
    const success = await HandleLogin(login);
    if (success) {
     router.push('/asset');
+  } else {
+    alert('Wrong email/password. Try again.');
   }
-  }
+}
 
   return (
     <div>
