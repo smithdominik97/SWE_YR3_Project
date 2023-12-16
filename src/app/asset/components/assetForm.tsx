@@ -1,6 +1,7 @@
 import { InsertAsset } from "@/api/api"
 import { Asset } from "@/app/asset/components/assetItem"
 import styles from "./form.module.css"
+import  returnSysinfo  from "@/controller/sysinfo"
 
 interface AssetFormProps {
     onSubmit: () => void;
@@ -26,15 +27,26 @@ export default function AssetForm({ onSubmit }: AssetFormProps)  {
         onSubmit();
     }
 
+
+    const getSysInfo = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+
+        const sysInfo = await returnSysinfo();
+        console.log(sysInfo);
+    }
+
     return (
         <form method="POST" onSubmit={assetsubmit} className={styles.form}>
             <label htmlFor="systemname">System Name: </label>
             <input type="text" name="systemname"/>
-            <label htmlFor="model">Model: </label>
+            <label htmlFor="CPU Model">Model: </label>
             <input type="text" name="model"/>
-            <label htmlFor="manufacturer">Manufacturer: </label>
-            <input type="text" name="manufacturer"/>
-            <label htmlFor="type">Type: </label>
+            <label htmlFor="os">Operating System: </label>
+            <input type="text" name="os"/>
+            <label htmlFor="kernel">Kernel Version: </label>
+            <input type="text" name="kernel"/>
+            <label htmlFor="type">System type: </label>
             <input type="text" name="type"/>
             <label htmlFor="ip">IP Address: </label>
             <input type="text" name="ip"/>
@@ -44,6 +56,7 @@ export default function AssetForm({ onSubmit }: AssetFormProps)  {
             <textarea name="note" id="" cols={30} rows={10}></textarea>
             <label htmlFor="employees_id">Employee ID: </label>
             <input type="text" name="employees_id"/>
+            <button type="button" onClick={getSysInfo}>Get System Info</button>
             <button type="submit">Add</button>
         </form>
     )
