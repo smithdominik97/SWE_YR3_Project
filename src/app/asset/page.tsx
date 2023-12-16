@@ -31,7 +31,7 @@ export default function Home() {
         <nav className={styles.nav}>
           <ul className={styles.navbar}>
             <li>
-              <p></p>
+              <button className={styles.menuBtn}><a className={styles.linkMenu} href="../menu">Menu</a></button>
             </li>
 
             <li className={styles.navitem}>

@@ -1,0 +1,30 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 1rem;
+}
+
+.menuBtn  {
+    width: 16rem;
+    height: 6rem;
+}
+
+.menuBtn > a {
+    text-decoration: none;
+    color: black;
+}
+
+.menuBtn:hover {
+    color: red;
+    cursor: pointer;
+}
+

@@ -15,6 +15,21 @@ html, button {
   list-style-type: none;
 }
 
+
+.menuBtn {
+  background-color: rgb(66, 76, 85);
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.linkMenu {
+  text-decoration: none;
+  color: white;
+}
+
 .body {
   display: flex;
   min-height: 100vh;

@@ -3,10 +3,15 @@ import styles from "./page.module.css";
 import { HandleLogin } from "@/controller/login"
 import { Login } from "@/types/types"
 import { useRouter} from "next/navigation"
+import getSysInfo  from "@/controller/sysinfo";
+
+
 
 
 
 export default function Login() {
+
+  getSysInfo();
   const router = useRouter();
 
   const loginSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +25,7 @@ export default function Login() {
     
    const success = await HandleLogin(login);
    if (success) {
-    router.push('/asset');
+    router.push('/menu');
   } else {
     alert('Wrong email/password. Try again.');
   }
