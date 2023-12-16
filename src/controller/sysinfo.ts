@@ -12,8 +12,23 @@ import {
   } from "tauri-plugin-system-info-api";
 
 
+  interface SysInfo {
+    hostname: string,
+    os: string,
+    kernelVersion: string,
+    cpu: string,
+    memory: number
+}
 
-export default async function getSysInfo() {
+
+export default async function returnSysinfo() {
+    const system: SysInfo = await getSysInfo();
+    console.log(system);
+    return system;
+}
+
+
+export async function getSysInfo() {
     const sysinfo = await allSysInfo();
 
     // get Memory info
@@ -30,14 +45,21 @@ export default async function getSysInfo() {
 
     //OS info
     const osFull = sysinfo['os_version'];
-    const os = osFull.split(" ")[0];
+    const os = "Windows " + osFull.split(" ")[0];
     const kernelVersion = sysinfo['kernel_version'];
     
-    console.log("Hostname: " + hostname);
-    console.log("OS: Windows " + os);
-    console.log("Kernel Version: " + kernelVersion);
-    console.log("CPU: " + cpuName);
-    console.log("Memory: " + memoryInGB + "GB");
+
+
+    const sysInfo = {
+        hostname: hostname,
+        os: os,
+        kernelVersion: kernelVersion,
+        cpu: cpuName,
+        memory: memoryInGB
+    }
+
+    return sysInfo
 
 }
+
 

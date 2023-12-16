@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { HandleLogin } from "@/controller/login"
 import { Login } from "@/types/types"
 import { useRouter} from "next/navigation"
-import getSysInfo  from "@/controller/sysinfo";
+import returnSysinfo  from "@/controller/sysinfo";
 
 
 
@@ -11,7 +11,7 @@ import getSysInfo  from "@/controller/sysinfo";
 
 export default function Login() {
 
-  getSysInfo();
+  returnSysinfo();
   const router = useRouter();
 
   const loginSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
