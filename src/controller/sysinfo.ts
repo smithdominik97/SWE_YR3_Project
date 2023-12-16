@@ -11,17 +11,25 @@ import {
     Batteries,
   } from "tauri-plugin-system-info-api";
 
+  import { invoke } from '@tauri-apps/api/tauri';
+
 
   interface SysInfo {
     hostname: string,
     os: string,
     kernelVersion: string,
     cpu: string,
-    memory: number
+    memory: number,
+    systemType: string,
+    ipAddress: string
 }
 
 
 export default async function returnSysinfo() {
+ 
+
+    const sysinfo = await allSysInfo();
+    console.log(sysinfo);
     const system: SysInfo = await getSysInfo();
     console.log(system);
     return system;
@@ -49,13 +57,28 @@ export async function getSysInfo() {
     const kernelVersion = sysinfo['kernel_version'];
     
 
+    // determine system type by battery info
+    const batteryInfo = await batteries();
+    let systemType = "";
+    
+    if (batteryInfo.length > 0) {
+        systemType = "Laptop";
+    } else {
+        systemType = "Desktop";
+    }
+
+    const ipAddress = await invoke<IpAddr>('getip');
+    console.log(ipAddress);
+
 
     const sysInfo = {
         hostname: hostname,
         os: os,
         kernelVersion: kernelVersion,
         cpu: cpuName,
-        memory: memoryInGB
+        memory: memoryInGB,
+        systemType: systemType,
+        ipAddress: ipAddress
     }
 
     return sysInfo
