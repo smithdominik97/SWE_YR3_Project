@@ -4,12 +4,17 @@ import { HandleLogin } from "@/controller/login"
 import { Login } from "@/types/types"
 import { useRouter} from "next/navigation"
 import returnSysinfo  from "@/controller/sysinfo";
+import bcrypt from "bcryptjs";
 
 
 
 
 
 export default function Login() {
+  const pass: string = "admin";
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(pass, salt);
+  console.log(hash);
 
   returnSysinfo();
   const router = useRouter();

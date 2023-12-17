@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { GetUser } from '@/api/api';
+import { GetEmployee } from '@/api/api';
 import { Login } from '@/types/types';
 
 
@@ -16,7 +16,7 @@ export async function HandleLogin (login: Login) {
     
     
 
-    const users: any = await GetUser(user);
+    const users: any = await GetEmployee(user);
 
     if (users.length == 0) {
         console.log("wrong username");
