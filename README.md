@@ -1,4 +1,5 @@
-
+## Hardware Asset Manager using Tauri and Next.js
+uses a sysinfo plugin to automatically determine the hardware of the system the application is running on with the info being stored in a database
 ## Getting Started
 
 To run development server:
