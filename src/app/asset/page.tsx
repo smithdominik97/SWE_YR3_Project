@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api";
 import AssetItem from "@/app/asset/components/assetItem";
+import AssetForm from "@/app/asset/components/assetForm";
 import styles from "./page.module.css";
 
 
@@ -21,7 +22,7 @@ export default function Home() {
   };
 
 
- 
+
   // const assets = GetAsset();
   // insertAsset();
 
@@ -51,11 +52,11 @@ export default function Home() {
             </button>
 
           </div> */}
-       
+
           <AssetItem reload={triggerReload} />
-          <AssetForm onSubmit={() => setReload(!reload)}/>
+          <AssetForm onSubmit={() => setReload(!reload)} />
         </div>
-       
+
       </main>
     </>
   );
